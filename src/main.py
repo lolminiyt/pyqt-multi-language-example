@@ -1,12 +1,9 @@
 import json
 import sys
 
-from PyQt5.QtCore import QLocale, Qt, QCoreApplication
-from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QComboBox, QVBoxLayout, QFormLayout, QWidget
-
-QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-QCoreApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)  # HighDPI support
+from PyQt6.QtCore import QLocale, Qt, QCoreApplication
+from PyQt6.QtGui import QFont
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QComboBox, QVBoxLayout, QFormLayout, QWidget
 
 QApplication.setFont(QFont('Arial', 12))
 
@@ -50,7 +47,7 @@ class MainWindow(QMainWindow):
         lay = QVBoxLayout()
         lay.addWidget(langWidget)
         lay.addWidget(self.__sampleLbl)
-        lay.setAlignment(Qt.AlignTop)
+        lay.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         mainWidget = QWidget()
         mainWidget.setLayout(lay)
@@ -84,4 +81,5 @@ if __name__ == '__main__':
     window = MainWindow()
     window.show()
 
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
+
